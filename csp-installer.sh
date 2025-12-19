@@ -8,7 +8,7 @@ usage() {
 usage: $0 OPTION
 
 OPTIONS:
-    [1|2|3]     Install CSP major version [1|2|3]
+    [1|2|3|4]     Install CSP major version [1|2|3|4]
     help        Show this message
     uninstall   Uninstall CSP
 EOF
@@ -64,6 +64,9 @@ else
             ;;
         3)
             CSP_VERSION=3
+            ;;
+        4)
+            CSP_VERSION=4
             ;;
         *)
             echo "Unknown command or CSP version" 1>&2
@@ -141,6 +144,13 @@ else
                 wget -q --show-progress "https://vd.clipstudio.net/clipcontent/paint/app/314/CSP_314w_setup.exe"
             fi
             CSP_SETUP="CSP_314w_setup.exe"
+            ;;
+        4)
+            if [ ! -f CSP_403w_setup.exe ]; then
+                echo "Downloading CSP_403w_setup.exe..."
+                wget -q --show-progress "https://vd.clipstudio.net/clipcontent/paint/app/403/CSP_403w_setup.exe"
+            fi
+            CSP_SETUP="CSP_403w_setup.exe"
             ;;
         *)
             echo "Error that should be impossible occurred (failed to properly set CSP_VERSION)" 1>&2
