@@ -15,9 +15,9 @@ cd csp-linux
 chmod +x csp-installer.sh
 ./csp-installer.sh 3
 ```
-
-Once it's installed, find how to add `~/.local/share/csp-linux/launch` to your
-bash PATH, so you can use csp-linux to start CSP.  
+To launch CSP without having to return to the `csp-linux` folder every time,
+find how to add `~/.local/share/csp-linux/launch` to your bash PATH, so you can
+use csp-linux to start CSP.  
 If you use a different shell, like fish or zsh, find instructions for that
 shell.  
 Even without that, some desktop environments like KDE will still find Clip
