@@ -52,6 +52,14 @@ elif [ $1 = "uninstall" ]; then
         fi
     fi
 
+    if [ -f $APPLICATIONS_PATH/Clip_Studio_Paint.desktop ]; then
+        rm $APPLICATIONS_PATH/Clip_Studio_Paint.desktop $APPLICATIONS_PATH/csp.png
+        if [ $? -ne 0 ]; then
+            echo "Failed to remove $APPLICATIONS_PATH/Clip_Studio_Paint.desktop" 1>&2
+            exit 1
+        fi
+    fi
+
     echo "Successfully removed CSP"
     exit 0
 else
